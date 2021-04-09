@@ -31,4 +31,8 @@
             Return strVal
         End Get
     End Property
+
+    Public Sub New()
+        intVal = 1
+    End Sub
 End Class

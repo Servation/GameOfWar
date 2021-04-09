@@ -80,31 +80,31 @@
                 <tr>
                     <td class="auto-style19">
                         <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Cards:"></asp:Label>
-                        <asp:Label ID="lblANum" runat="server" Font-Size="XX-Large" Text="26"></asp:Label>
+                        <asp:Label ID="lblANum" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
                     <td class="auto-style25" colspan="2"></td>
                     <td class="auto-style21">
                         <asp:Label ID="lblAPlay1" runat="server" Font-Size="XX-Large" Text="Cards:"></asp:Label>
-                        <asp:Label ID="lblBNum" runat="server" Font-Size="XX-Large" Text="26"></asp:Label>
+                        <asp:Label ID="lblBNum" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style12"></td>
                     <td class="auto-style26">
-                        <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large" Text="Label"></asp:Label>
+                        <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
                     <td class="auto-style15">
-                        <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large" Text="Label"></asp:Label>
+                        <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style22"></td>
                     <td class="auto-style27">
-                        <asp:Button ID="btnPlayerA" runat="server" Enabled="False" Font-Size="X-Large" Height="56px" Text="Play!" Width="259px" />
+                        <asp:Button ID="btnPlayerA" runat="server" Font-Size="X-Large" Height="56px" Text="Play!" Width="259px" />
                     </td>
                     <td class="auto-style23">
-                        <asp:Button ID="btnPlayerB" runat="server" Enabled="False" Font-Size="X-Large" Height="56px" Text="Play!" Width="259px" />
+                        <asp:Button ID="btnPlayerB" runat="server" Font-Size="X-Large" Height="56px" Text="Play!" Width="259px" />
                     </td>
                     <td class="auto-style24"></td>
                 </tr>
