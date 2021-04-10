@@ -92,9 +92,17 @@
                     <td class="auto-style12"></td>
                     <td class="auto-style26">
                         <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblAAPlay" runat="server" Font-Size="XX-Large"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblAAAPlay" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
                     <td class="auto-style15">
                         <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblBBPlay" runat="server" Font-Size="XX-Large"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblBBBPlay" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
                     <td class="auto-style9"></td>
                 </tr>

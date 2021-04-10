@@ -68,6 +68,24 @@ Partial Public Class WebForm1
     Protected WithEvents lblAPlay As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lblAAPlay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAAPlay As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblAAAPlay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAAAPlay As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lblBPlay control.
     '''</summary>
     '''<remarks>
@@ -75,6 +93,24 @@ Partial Public Class WebForm1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblBPlay As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblBBPlay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblBBPlay As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblBBBPlay control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblBBBPlay As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''btnPlayerA control.
