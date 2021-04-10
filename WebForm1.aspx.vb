@@ -6,6 +6,32 @@
     Private Shared PlayedB As Boolean
     Private Shared logicalA As Integer
     Private Shared logicalB As Integer
+    Private urlLinksA() As String = {"", "", "https://upload.wikimedia.org/wikipedia/en/0/0f/Wands02.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/f/ff/Wands03.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/a/a4/Wands04.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/9/9d/Wands05.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/3/3b/Wands06.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/e/e4/Wands07.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/6/6b/Wands08.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/e/e7/Wands09.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/0/0b/Wands10.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/1/16/Wands12.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/0/0d/Wands13.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/c/ce/Wands14.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/1/11/Wands01.jpg"}
+    Private urlLinksB() As String = {"", "", "https://upload.wikimedia.org/wikipedia/en/9/9e/Swords02.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/0/02/Swords03.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/b/bf/Swords04.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/2/23/Swords05.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/2/29/Swords06.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/3/34/Swords07.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/a/a7/Swords08.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/2/2f/Swords09.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/d/d4/Swords10.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/b/b0/Swords12.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/d/d4/Swords13.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/3/33/Swords14.jpg",
+                                            "https://upload.wikimedia.org/wikipedia/en/1/1a/Swords01.jpg"}
     Protected Sub Shuffle()
         Dim randGen As New Random
         Dim intNumbers() As Integer = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
@@ -80,11 +106,11 @@
 
     Protected Sub tester()
         For i As Integer = 0 To logicalA - 1
-            Debug.Write(PlayerA(i).CardRank & " ")
+            Debug.Write(PlayerA(i).CardRank & " | ")
         Next
         Debug.WriteLine(" ------ " & logicalA)
         For n As Integer = 0 To logicalB - 1
-            Debug.Write(PlayerB(n).CardRank & " ")
+            Debug.Write(PlayerB(n).CardRank & " | ")
         Next
         Debug.WriteLine(" ------ " & logicalB)
         Debug.WriteLine("")
@@ -192,9 +218,11 @@
         lblAAAPlay.Text = ""
         lblBBBPlay.Text = ""
         lblResults.Text = ""
+
         If PlayedA = False Then
             PlayedA = True
             lblAPlay.Text = PlayerA(logicalA - 1).CardRank
+            imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
             If PlayedA And PlayedB Then
                 Fight()
             End If
@@ -206,9 +234,11 @@
         lblAAAPlay.Text = ""
         lblBBBPlay.Text = ""
         lblResults.Text = ""
+        imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
         If PlayedB = False Then
             PlayedB = True
             lblBPlay.Text = PlayerB(logicalB - 1).CardRank
+
             If PlayedA And PlayedB Then
                 Fight()
             End If
@@ -225,7 +255,7 @@
             Shuffle()
             lblANum.Text = logicalA
             lblBNum.Text = logicalB
-
+            tester()
         End If
     End Sub
 

@@ -7,16 +7,18 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 1158px;
-            height: 774px;
+            width: 1395px;
+            height: 914px;
             position: absolute;
-            top: 0px;
-            left: 0px;
+            top: 17px;
+            left: 30px;
             z-index: 1;
+            background-color: #CC9900;
         }
         .auto-style9 {
             height: 516px;
             width: 439px;
+            text-align: center;
         }
         .auto-style11 {
             width: 452px;
@@ -24,6 +26,7 @@
         .auto-style12 {
             width: 452px;
             height: 516px;
+            text-align: center;
         }
         .auto-style15 {
             height: 516px;
@@ -77,11 +80,22 @@
             width: 1389px;
             height: 865px;
         }
+        .auto-style29 {
+            position: relative;
+            top: 11px;
+            left: 22px;
+            width: 1431px;
+            height: 936px;
+        }
+        .auto-style30 {
+            width: 1449px;
+            height: 922px;
+        }
     </style>
 </head>
-<body style="height: 861px; width: 1383px; position: relative;">
-    <form id="form1" runat="server">
-        <div style="position: relative; top: 0px; left: 0px; width: 1431px; height: 936px">
+<body style="height: 1000px; width: 1461px; position: relative; left: 181px; top: 104px; margin-right: 261px;">
+    <form id="form1" runat="server" class="auto-style30">
+        <div class="auto-style29">
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style19">
@@ -97,7 +111,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style12"></td>
+                    <td class="auto-style12">
+                        <asp:Image ID="imgA" runat="server" Width="250px" />
+                    </td>
                     <td class="auto-style26">
                         <asp:Label ID="lblAPlay" runat="server" Font-Size="50px" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
@@ -112,7 +128,9 @@
                         <br />
                         <asp:Label ID="lblBBBPlay" runat="server" Font-Size="50px" Font-Bold="True" ForeColor="#660033"></asp:Label>
                     </td>
-                    <td class="auto-style9"></td>
+                    <td class="auto-style9">
+                        <asp:Image ID="imgB" runat="server" Width="250px" />
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style22"></td>
