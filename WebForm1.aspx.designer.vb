@@ -77,6 +77,24 @@ Partial Public Class WebForm1
     Protected WithEvents imgA As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
+    '''imgAA control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgAA As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''imgAAA control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgAAA As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
     '''lblAPlay control.
     '''</summary>
     '''<remarks>
@@ -138,6 +156,24 @@ Partial Public Class WebForm1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents imgB As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''imgBB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgBB As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''imgBBB control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgBBB As Global.System.Web.UI.WebControls.Image
 
     '''<summary>
     '''btnPlayerA control.
