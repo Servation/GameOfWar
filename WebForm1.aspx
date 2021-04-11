@@ -118,32 +118,38 @@
                 </tr>
                 <tr>
                     <td class="auto-style46">
-                        <asp:Image ID="imgA" runat="server" Width="300px" />
                         <br />
-                        <asp:Image ID="imgAA" runat="server" Width="150px" Visible="False" />
+                        <asp:Image ID="imgAA" runat="server" Width="250px" Visible="False" />
                         <br />
-                        <asp:Image ID="imgAAA" runat="server" Width="100px" Visible="False" />
+                        <asp:Label ID="lblAAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <br />
+                        <asp:Image ID="imgAAA" runat="server" Width="150px" Visible="False" />
+                        <br />
+                        <asp:Label ID="lblAAAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                     </td>
                     <td class="auto-style26">
-                        <asp:Label ID="lblAPlay" runat="server" Font-Size="100px" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <asp:Image ID="imgA" runat="server" Width="300px" />
                         <br />
-                        <asp:Label ID="lblAAPlay" runat="server" Font-Size="100px" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
-                        <asp:Label ID="lblAAAPlay" runat="server" Font-Size="100px" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <br />
                     </td>
                     <td class="auto-style50">
-                        <asp:Label ID="lblBPlay" runat="server" Font-Size="100px" Font-Bold="True" ForeColor="#660033"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblBBPlay" runat="server" Font-Size="100px" Font-Bold="True" ForeColor="#660033"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblBBBPlay" runat="server" Font-Size="100px" Font-Bold="True" ForeColor="#660033"></asp:Label>
-                    </td>
-                    <td class="auto-style38">
                         <asp:Image ID="imgB" runat="server" Width="300px" />
                         <br />
-                        <asp:Image ID="imgBB" runat="server" Width="150px" Visible="False" />
+                        <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
-                        <asp:Image ID="imgBBB" runat="server" Width="100px" Visible="False" />
+                        <br />
+                    </td>
+                    <td class="auto-style38">
+                        <br />
+                        <asp:Image ID="imgBB" runat="server" Width="250px" Visible="False" />
+                        <br />
+                        <asp:Label ID="lblBBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <br />
+                        <asp:Image ID="imgBBB" runat="server" Width="150px" Visible="False" />
+                        <br />
+                        <asp:Label ID="lblBBBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                     </td>
                 </tr>
                 <tr>
