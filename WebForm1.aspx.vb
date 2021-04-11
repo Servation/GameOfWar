@@ -128,12 +128,12 @@
                 lblBBPlay.Text = PlayerB(logicalB - 2).CardRank
                 lblAAAPlay.Text = PlayerA(logicalA - 3).CardRank
                 lblBBBPlay.Text = PlayerB(logicalB - 3).CardRank
-                imgAA.Width = 150
+                imgAA.Width = 125
                 imgAA.Visible = True
                 imgAAA.Visible = True
                 imgAA.ImageUrl = urlLinksA(PlayerA(logicalA - 2).CardVal)
                 imgAAA.ImageUrl = urlLinksA(PlayerA(logicalA - 3).CardVal)
-                imgBB.Width = 150
+                imgBB.Width = 125
                 imgBB.Visible = True
                 imgBBB.Visible = True
                 imgBB.ImageUrl = urlLinksB(PlayerB(logicalB - 2).CardVal)
@@ -168,14 +168,16 @@
                     PlayerB(7).CardVal = tempAAA
                     logicalA -= 4
                     logicalB += 4
+                Else
+                    rotateCards()
                 End If
             Else
                 lblAAPlay.Text = PlayerA(logicalA - 2).CardRank
                 lblBBPlay.Text = PlayerB(logicalB - 2).CardRank
-                imgAA.Width = 250
+                imgAA.Width = 200
                 imgAA.Visible = True
                 imgAA.ImageUrl = urlLinksA(PlayerA(logicalA - 2).CardVal)
-                imgBB.Width = 250
+                imgBB.Width = 200
                 imgBB.Visible = True
                 imgBB.ImageUrl = urlLinksB(PlayerB(logicalB - 2).CardVal)
                 If tempA > tempB Then
@@ -211,20 +213,23 @@
                 End If
             End If
         Else
-            reset()
-            lblResults.Text = "Out of Range: Shuffle"
-            Dim intTemp As Integer = PlayerA(0).CardVal
-            For i As Integer = 0 To logicalA - 1
-                PlayerA(i).CardVal = PlayerA(i + 1).CardVal
-            Next
-            PlayerA(logicalA - 1).CardVal = intTemp
-            intTemp = PlayerB(0).CardVal
-            For n As Integer = 0 To logicalB - 1
-                PlayerB(n).CardVal = PlayerB(n + 1).CardVal
-            Next
-            PlayerB(logicalB - 1).CardVal = intTemp
+            rotateCards()
         End If
+    End Sub
 
+    Protected Sub rotateCards()
+        Dim intTemp As Integer = PlayerA(0).CardVal
+        For i As Integer = 0 To logicalA - 1
+            PlayerA(i).CardVal = PlayerA(i + 1).CardVal
+        Next
+        PlayerA(logicalA - 1).CardVal = intTemp
+        intTemp = PlayerB(0).CardVal
+        For n As Integer = 0 To logicalB - 1
+            PlayerB(n).CardVal = PlayerB(n + 1).CardVal
+        Next
+        PlayerB(logicalB - 1).CardVal = intTemp
+        PlayerAStart()
+        PlayerBStart()
     End Sub
 
     Protected Sub btnGame_Click(sender As Object, e As EventArgs) Handles btnGame.Click
@@ -258,7 +263,7 @@
         imgBB.Visible = False
         imgBBB.Visible = False
     End Sub
-    Protected Sub btnPlayerA_Click(sender As Object, e As EventArgs) Handles btnPlayerA.Click
+    Protected Sub PlayerAStart()
         reset()
         If logicalA - 1 >= 0 Then
             lblAPlay.Text = PlayerA(logicalA - 1).CardRank
@@ -284,7 +289,10 @@
             btnPlayerA.Enabled = False
         End If
     End Sub
-    Protected Sub btnPlayerB_Click(sender As Object, e As EventArgs) Handles btnPlayerB.Click
+    Protected Sub btnPlayerA_Click(sender As Object, e As EventArgs) Handles btnPlayerA.Click
+        PlayerAStart()
+    End Sub
+    Protected Sub PlayerBStart()
         reset()
         If logicalB - 1 >= 0 Then
             lblBPlay.Text = PlayerB(logicalB - 1).CardRank
@@ -310,6 +318,9 @@
             btnPlayerB.Enabled = False
             btnPlayerA.Enabled = False
         End If
+    End Sub
+    Protected Sub btnPlayerB_Click(sender As Object, e As EventArgs) Handles btnPlayerB.Click
+        PlayerBStart()
     End Sub
 
     Protected Sub WebForm1_Load(sender As Object, e As EventArgs) Handles Me.Load

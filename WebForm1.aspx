@@ -7,21 +7,21 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 1682px;
-            height: 937px;
+            width: 1643px;
+            height: 1116px;
             position: absolute;
-            top: 17px;
-            left: 30px;
+            top: 174px;
+            left: 223px;
             z-index: 1;
             background-color: #CC9900;
         }
         .auto-style26 {
-            height: 703px;
+            height: 865px;
             width: 464px;
             text-align: center;
         }
         .auto-style27 {
-            height: 82px;
+            height: 90px;
             width: 464px;
             text-align: center;
         }
@@ -31,36 +31,26 @@
         }
         .auto-style29 {
             position: relative;
-            top: 5px;
-            left: 3px;
-            width: 1049px;
-            height: 884px;
+            top: -200px;
+            left: -274px;
+            width: 292px;
+            height: 235px;
             margin-right: 60px;
         }
         .auto-style30 {
-            width: 1759px;
-            height: 1083px;
+            width: 1287px;
+            height: 854px;
         }
         .auto-style33 {
-            height: 74px;
-            text-align: center;
-        }
-        .auto-style34 {
-            height: 126px;
-            width: 350px;
+            height: 75px;
             text-align: center;
         }
         .auto-style37 {
-            height: 74px;
+            height: 75px;
             width: 350px;
         }
         .auto-style38 {
             width: 350px;
-            text-align: center;
-        }
-        .auto-style45 {
-            height: 126px;
-            width: 349px;
             text-align: center;
         }
         .auto-style46 {
@@ -68,40 +58,50 @@
             text-align: center;
         }
         .auto-style48 {
-            height: 74px;
+            height: 75px;
             width: 349px;
         }
-        .auto-style49 {
-            height: 126px;
-            text-align: center;
-        }
         .auto-style50 {
-            height: 703px;
+            height: 865px;
             width: 460px;
             text-align: center;
         }
         .auto-style51 {
-            height: 82px;
+            height: 90px;
             width: 460px;
             text-align: center;
         }
+        .auto-style52 {
+            height: 49px;
+            text-align: center;
+        }
+        .auto-style53 {
+            width: 349px;
+            text-align: center;
+            height: 49px;
+        }
+        .auto-style54 {
+            width: 350px;
+            text-align: center;
+            height: 49px;
+        }
     </style>
 </head>
-<body style="height: 998px; width: 1612px; position: relative; left: 170px; top: 100px; margin-right: 261px;">
+<body style="height: 1113px; width: 1474px; position: relative; left: 78px; top: 36px; margin-right: 261px;">
     <form id="form1" runat="server" class="auto-style30">
         <div class="auto-style29">
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style45">
+                    <td class="auto-style53">
                         <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Cards:"></asp:Label>
                         <asp:Label ID="lblANum" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
-                    <td class="auto-style49" colspan="2">
+                    <td class="auto-style52" colspan="2">
                         <asp:Label ID="lblResults" runat="server" Font-Size="XX-Large"></asp:Label>
                         <br />
                         <asp:Label ID="lblResults0" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
-                    <td class="auto-style34">
+                    <td class="auto-style54">
                         <asp:Label ID="lblAPlay1" runat="server" Font-Size="XX-Large" Text="Cards:"></asp:Label>
                         <asp:Label ID="lblBNum" runat="server" Font-Size="XX-Large"></asp:Label>
                     </td>
@@ -109,23 +109,23 @@
                 <tr>
                     <td class="auto-style46" rowspan="2">
                         <br />
-                        <asp:Image ID="imgAA" runat="server" Width="250px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
+                        <asp:Image ID="imgAA" runat="server" Width="200px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
                         <asp:Label ID="lblAAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
-                        <asp:Image ID="imgAAA" runat="server" Width="150px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
+                        <asp:Image ID="imgAAA" runat="server" Width="125px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
                         <asp:Label ID="lblAAAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                     </td>
                     <td class="auto-style26">
-                        <asp:Image ID="imgA" runat="server" Width="300px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
+                        <asp:Image ID="imgA" runat="server" Width="250px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
                         <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
                         <br />
                     </td>
                     <td class="auto-style50">
-                        <asp:Image ID="imgB" runat="server" Width="300px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
+                        <asp:Image ID="imgB" runat="server" Width="250px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
                         <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
@@ -133,11 +133,11 @@
                     </td>
                     <td class="auto-style38" rowspan="2">
                         <br />
-                        <asp:Image ID="imgBB" runat="server" Width="250px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
+                        <asp:Image ID="imgBB" runat="server" Width="200px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
                         <asp:Label ID="lblBBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                         <br />
-                        <asp:Image ID="imgBBB" runat="server" Width="150px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
+                        <asp:Image ID="imgBBB" runat="server" Width="125px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
                         <asp:Label ID="lblBBBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
                     </td>
