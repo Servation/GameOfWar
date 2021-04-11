@@ -116,7 +116,7 @@
         Debug.WriteLine("")
     End Sub
     Protected Sub War(tA As Integer, tB As Integer)
-        If logicalA - 4 > 0 Or logicalB - 4 > 0 Then
+        If logicalA - 4 > 0 And logicalB - 4 > 0 Then
             Static tempA As Integer = PlayerA(logicalA - 2).CardVal
             Static tempB As Integer = PlayerB(logicalB - 2).CardVal
             Static tempAA As Integer = PlayerA(logicalA - 3).CardVal
@@ -211,6 +211,18 @@
                 End If
             End If
         Else
+            reset()
+            lblResults.Text = "Out of Range: Shuffle"
+            Dim intTemp As Integer = PlayerA(0).CardVal
+            For i As Integer = 0 To logicalA - 1
+                PlayerA(i).CardVal = PlayerA(i + 1).CardVal
+            Next
+            PlayerA(logicalA - 1).CardVal = intTemp
+            intTemp = PlayerB(0).CardVal
+            For n As Integer = 0 To logicalB - 1
+                PlayerB(n).CardVal = PlayerB(n + 1).CardVal
+            Next
+            PlayerB(logicalB - 1).CardVal = intTemp
         End If
 
     End Sub
@@ -254,9 +266,12 @@
             imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
             If PlayedA = False Then
                 PlayedA = True
+                btnPlayerA.Enabled = False
                 If PlayedA And PlayedB Then
                     lblBPlay.Text = PlayerB(logicalB - 1).CardRank
                     imgB.Visible = True
+                    btnPlayerB.Enabled = True
+                    btnPlayerA.Enabled = True
                     imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
                     Fight()
                 End If
@@ -277,9 +292,12 @@
             imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
             If PlayedB = False Then
                 PlayedB = True
+                btnPlayerB.Enabled = False
                 If PlayedA And PlayedB Then
                     lblAPlay.Text = PlayerA(logicalA - 1).CardRank
                     imgA.Visible = True
+                    btnPlayerB.Enabled = True
+                    btnPlayerA.Enabled = True
                     imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
                     Fight()
                 End If
