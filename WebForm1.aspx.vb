@@ -124,10 +124,10 @@
             Static tempAAA As Integer = PlayerA(logicalA - 4).CardVal
             Static tempBBB As Integer = PlayerB(logicalB - 4).CardVal
             If tempA = tempB Then
-                lblAAPlay.Text = PlayerA(logicalA - 2).CardVal
-                lblBBPlay.Text = PlayerB(logicalB - 2).CardVal
-                lblAAAPlay.Text = PlayerA(logicalA - 3).CardVal
-                lblBBBPlay.Text = PlayerB(logicalB - 3).CardVal
+                lblAAPlay.Text = PlayerA(logicalA - 2).CardRank
+                lblBBPlay.Text = PlayerB(logicalB - 2).CardRank
+                lblAAAPlay.Text = PlayerA(logicalA - 3).CardRank
+                lblBBBPlay.Text = PlayerB(logicalB - 3).CardRank
                 imgA.Width = 100
                 imgAA.Width = 100
                 imgAA.Visible = True
@@ -141,6 +141,7 @@
                 imgBB.ImageUrl = urlLinksB(PlayerB(logicalB - 2).CardVal)
                 imgBBB.ImageUrl = urlLinksB(PlayerB(logicalB - 3).CardVal)
                 If tempAA > tempBB Then
+                    lblResults0.Text = PlayerA(logicalA - 3).CardRank & "  >  " & PlayerB(logicalB - 3).CardRank
                     For i As Integer = logicalA + 7 To 8 Step -1
                         PlayerA(i).CardVal = PlayerA(i - 8).CardVal
                     Next
@@ -155,6 +156,7 @@
                     logicalA += 4
                     logicalB -= 4
                 ElseIf tempBB > tempAA Then
+                    lblResults0.Text = PlayerA(logicalA - 3).CardRank & "  <  " & PlayerB(logicalB - 3).CardRank
                     For i As Integer = logicalB + 7 To 8 Step -1
                         PlayerB(i).CardVal = PlayerB(i - 8).CardVal
                     Next
@@ -170,8 +172,8 @@
                     logicalB += 4
                 End If
             Else
-                lblAAPlay.Text = PlayerA(logicalA - 2).CardVal
-                lblBBPlay.Text = PlayerB(logicalB - 2).CardVal
+                lblAAPlay.Text = PlayerA(logicalA - 2).CardRank
+                lblBBPlay.Text = PlayerB(logicalB - 2).CardRank
                 imgA.Width = 150
                 imgAA.Width = 150
                 imgAA.Visible = True
@@ -181,6 +183,7 @@
                 imgBB.Visible = True
                 imgBB.ImageUrl = urlLinksB(PlayerB(logicalB - 2).CardVal)
                 If tempA > tempB Then
+                    lblResults0.Text = PlayerA(logicalA - 2).CardRank & "  >  " & PlayerB(logicalB - 2).CardRank
                     For i As Integer = logicalA + 7 To 8 Step -1
                         PlayerA(i).CardVal = PlayerA(i - 8).CardVal
                     Next
@@ -195,6 +198,7 @@
                     logicalA += 4
                     logicalB -= 4
                 ElseIf tempB > tempA Then
+                    lblResults0.Text = PlayerA(logicalA - 2).CardRank & "  <  " & PlayerB(logicalB - 2).CardRank
                     For i As Integer = logicalB + 7 To 8 Step -1
                         PlayerB(i).CardVal = PlayerB(i - 8).CardVal
                     Next
@@ -223,37 +227,43 @@
         PlayedB = False
         btnPlayerB.Enabled = True
         btnPlayerA.Enabled = True
-        imgA.Width = 300
-        imgAA.Visible = False
-        imgAAA.Visible = False
-        imgB.Width = 300
-        imgBB.Visible = False
-        imgBBB.Visible = False
         Shuffle()
         lblANum.Text = logicalA
         lblBNum.Text = logicalB
+        lblAPlay.Text = ""
+        lblBPlay.Text = ""
+        reset()
+    End Sub
+    Protected Sub reset()
         lblAPlay.Text = ""
         lblBPlay.Text = ""
         lblAAPlay.Text = ""
         lblBBPlay.Text = ""
         lblAAAPlay.Text = ""
         lblBBBPlay.Text = ""
-    End Sub
-    Protected Sub btnPlayerA_Click(sender As Object, e As EventArgs) Handles btnPlayerA.Click
-        lblAAPlay.Text = ""
-        lblBBPlay.Text = ""
-        lblAAAPlay.Text = ""
-        lblBBBPlay.Text = ""
         lblResults.Text = ""
+        lblResults0.Text = ""
         imgA.Width = 300
+        imgA.Visible = False
         imgAA.Visible = False
         imgAAA.Visible = False
+        imgB.Width = 300
+        imgB.Visible = False
+        imgBB.Visible = False
+        imgBBB.Visible = False
+    End Sub
+    Protected Sub btnPlayerA_Click(sender As Object, e As EventArgs) Handles btnPlayerA.Click
+        reset()
         If logicalA - 1 >= 0 Then
+            lblAPlay.Text = PlayerA(logicalA - 1).CardRank
             If PlayedA = False Then
                 PlayedA = True
-                lblAPlay.Text = PlayerA(logicalA - 1).CardRank
-                imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
                 If PlayedA And PlayedB Then
+                    lblBPlay.Text = PlayerB(logicalB - 1).CardRank
+                    imgA.Visible = True
+                    imgB.Visible = True
+                    imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
+                    imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
                     Fight()
                 End If
             End If
@@ -264,23 +274,19 @@
             btnPlayerB.Enabled = False
             btnPlayerA.Enabled = False
         End If
-
     End Sub
     Protected Sub btnPlayerB_Click(sender As Object, e As EventArgs) Handles btnPlayerB.Click
-        lblAAPlay.Text = ""
-        lblBBPlay.Text = ""
-        lblAAAPlay.Text = ""
-        lblBBBPlay.Text = ""
-        lblResults.Text = ""
-        imgB.Width = 300
-        imgBB.Visible = False
-        imgBBB.Visible = False
+        reset()
         If logicalB - 1 >= 0 Then
+            lblBPlay.Text = PlayerB(logicalB - 1).CardRank
             If PlayedB = False Then
                 PlayedB = True
-                lblBPlay.Text = PlayerB(logicalB - 1).CardRank
-                imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
                 If PlayedA And PlayedB Then
+                    lblAPlay.Text = PlayerA(logicalA - 1).CardRank
+                    imgA.Visible = True
+                    imgB.Visible = True
+                    imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
+                    imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
                     Fight()
                 End If
                 lblBNum.Text = logicalB

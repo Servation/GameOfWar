@@ -50,6 +50,15 @@ Partial Public Class WebForm1
     Protected WithEvents lblResults As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''lblResults0 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblResults0 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''lblAPlay1 control.
     '''</summary>
     '''<remarks>
