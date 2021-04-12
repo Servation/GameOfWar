@@ -223,12 +223,12 @@
             PlayerA(i).CardVal = PlayerA(i + 1).CardVal
         Next
         PlayerA(logicalA - 1).CardVal = intTemp
+        PlayerAStart()
         intTemp = PlayerB(0).CardVal
         For n As Integer = 0 To logicalB - 1
             PlayerB(n).CardVal = PlayerB(n + 1).CardVal
         Next
         PlayerB(logicalB - 1).CardVal = intTemp
-        PlayerAStart()
         PlayerBStart()
     End Sub
 
