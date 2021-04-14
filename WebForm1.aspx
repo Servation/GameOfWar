@@ -120,14 +120,14 @@
                     <td class="auto-style26">
                         <asp:Image ID="imgA" runat="server" Width="250px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
-                        <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <asp:Label ID="lblAPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033" Height="80px"></asp:Label>
                         <br />
                         <br />
                     </td>
                     <td class="auto-style50">
                         <asp:Image ID="imgB" runat="server" Width="250px" BorderColor="#CCCCCC" BorderStyle="Groove" BorderWidth="6px" Visible="False" />
                         <br />
-                        <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033"></asp:Label>
+                        <asp:Label ID="lblBPlay" runat="server" Font-Size="XX-Large" Font-Bold="True" ForeColor="#660033" Height="80px"></asp:Label>
                         <br />
                         <br />
                     </td>

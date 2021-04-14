@@ -67,6 +67,8 @@
         Static tempB As Integer = PlayerB(logicalB - 1).CardVal
         If tempA > tempB Then
             lblResults.Text = PlayerA(logicalA - 1).CardRank & "  >  " & PlayerB(logicalB - 1).CardRank
+            lblAPlay.Text += "<br>Wins"
+            lblBPlay.Text += "<br>Loses"
             For i As Integer = logicalA + 1 To 1 Step -1
                 PlayerA(i + 1).CardVal = PlayerA(i - 1).CardVal
             Next
@@ -76,6 +78,8 @@
             logicalB -= 1
         ElseIf tempB > tempA Then
             lblResults.Text = PlayerA(logicalA - 1).CardRank & "  <  " & PlayerB(logicalB - 1).CardRank
+            lblAPlay.Text += "<br>Loses"
+            lblBPlay.Text += "<br>Wins"
             For i As Integer = logicalB + 1 To 1 Step -1
                 PlayerB(i + 1).CardVal = PlayerB(i - 1).CardVal
             Next
@@ -131,6 +135,8 @@
                 imgBBB.ImageUrl = urlLinksB(PlayerB(logicalB - 3).CardVal)
                 If tempAA > tempBB Then
                     lblResults0.Text = PlayerA(logicalA - 3).CardRank & "  >  " & PlayerB(logicalB - 3).CardRank
+                    lblAAAPlay.Text += Environment.NewLine & "Wins"
+                    lblBBBPlay.Text += Environment.NewLine & "Loses"
                     For i As Integer = logicalA + 7 To 8 Step -1
                         PlayerA(i).CardVal = PlayerA(i - 8).CardVal
                     Next
@@ -146,6 +152,8 @@
                     logicalB -= 4
                 ElseIf tempBB > tempAA Then
                     lblResults0.Text = PlayerA(logicalA - 3).CardRank & "  <  " & PlayerB(logicalB - 3).CardRank
+                    lblAAAPlay.Text += Environment.NewLine & "Loses"
+                    lblBBBPlay.Text += Environment.NewLine & "Wins"
                     For i As Integer = logicalB + 7 To 8 Step -1
                         PlayerB(i).CardVal = PlayerB(i - 8).CardVal
                     Next
@@ -173,6 +181,8 @@
                 imgBB.ImageUrl = urlLinksB(PlayerB(logicalB - 2).CardVal)
                 If tempA > tempB Then
                     lblResults0.Text = PlayerA(logicalA - 2).CardRank & "  >  " & PlayerB(logicalB - 2).CardRank
+                    lblAAPlay.Text += Environment.NewLine & "Wins"
+                    lblBBPlay.Text += Environment.NewLine & "Loses"
                     For i As Integer = logicalA + 7 To 8 Step -1
                         PlayerA(i).CardVal = PlayerA(i - 8).CardVal
                     Next
@@ -188,6 +198,8 @@
                     logicalB -= 4
                 ElseIf tempB > tempA Then
                     lblResults0.Text = PlayerA(logicalA - 2).CardRank & "  <  " & PlayerB(logicalB - 2).CardRank
+                    lblAAPlay.Text += Environment.NewLine & "Loses"
+                    lblBBPlay.Text += Environment.NewLine & "Wins"
                     For i As Integer = logicalB + 7 To 8 Step -1
                         PlayerB(i).CardVal = PlayerB(i - 8).CardVal
                     Next
@@ -300,16 +312,16 @@
     Protected Function GameOver() As Boolean
         If logicalB - 1 = 0 Then
             lblResults.Text = "Game Over"
-            lblAPlay.Text += "Won"
-            lblBPlay.Text += "Lost"
+            lblANum.Text = "WINNER"
+            lblBNum.Text = "LOSER"
             btnPlayerB.Enabled = False
             btnPlayerA.Enabled = False
             Return False
         End If
         If logicalA - 1 = 0 Then
             lblResults.Text = "Game Over"
-            lblAPlay.Text += "Lost"
-            lblBPlay.Text += "Won"
+            lblANum.Text = "LOSER"
+            lblBNum.Text = "WINNER"
             btnPlayerB.Enabled = False
             btnPlayerA.Enabled = False
             Return False
