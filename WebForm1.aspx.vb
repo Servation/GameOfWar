@@ -74,11 +74,6 @@
             PlayerA(1).CardVal = tempA
             logicalA += 1
             logicalB -= 1
-            lblANum.Text = logicalA
-            lblBNum.Text = logicalB
-            PlayedA = False
-            PlayedB = False
-            tester()
         ElseIf tempB > tempA Then
             lblResults.Text = PlayerA(logicalA - 1).CardRank & "  <  " & PlayerB(logicalB - 1).CardRank
             For i As Integer = logicalB + 1 To 1 Step -1
@@ -88,20 +83,16 @@
             PlayerB(1).CardVal = tempB
             logicalA -= 1
             logicalB += 1
-            lblANum.Text = logicalA
-            lblBNum.Text = logicalB
-            PlayedA = False
-            PlayedB = False
-            tester()
         Else
             lblResults.Text = "War"
             War(tempA, tempB)
-            lblANum.Text = logicalA
-            lblBNum.Text = logicalB
-            PlayedA = False
-            PlayedB = False
-            tester()
         End If
+        lblANum.Text = logicalA
+        lblBNum.Text = logicalB
+        PlayedA = False
+        PlayedB = False
+        tester()
+        GameOver()
     End Sub
 
     Protected Sub tester()
@@ -218,17 +209,17 @@
     End Sub
 
     Protected Sub rotateCards()
-        Dim intTemp As Integer = PlayerA(0).CardVal
-        For i As Integer = 0 To logicalA - 1
+        Static intTemp As Integer = PlayerA(logicalA - 1).CardVal
+        For i As Integer = logicalA - 1 To 0 Step -1
             PlayerA(i).CardVal = PlayerA(i + 1).CardVal
         Next
-        PlayerA(logicalA - 1).CardVal = intTemp
         PlayerAStart()
-        intTemp = PlayerB(0).CardVal
-        For n As Integer = 0 To logicalB - 1
+        PlayerA(0).CardVal = intTemp
+        Static intTemp1 As Integer = PlayerB(logicalB - 1).CardVal
+        For n As Integer = logicalB - 1 To 0 Step -1
             PlayerB(n).CardVal = PlayerB(n + 1).CardVal
         Next
-        PlayerB(logicalB - 1).CardVal = intTemp
+        PlayerB(0).CardVal = intTemp1
         PlayerBStart()
     End Sub
 
@@ -265,28 +256,20 @@
     End Sub
     Protected Sub PlayerAStart()
         reset()
-        If logicalA - 1 >= 0 Then
-            lblAPlay.Text = PlayerA(logicalA - 1).CardRank
-            imgA.Visible = True
-            imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
-            If PlayedA = False Then
-                PlayedA = True
-                btnPlayerA.Enabled = False
-                If PlayedA And PlayedB Then
-                    lblBPlay.Text = PlayerB(logicalB - 1).CardRank
-                    imgB.Visible = True
-                    btnPlayerB.Enabled = True
-                    btnPlayerA.Enabled = True
-                    imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
-                    Fight()
-                End If
-            End If
-        Else
-            lblResults.Text = "Game Over"
-            lblAPlay.Text = "Lost"
-            lblBPlay.Text = "Won"
-            btnPlayerB.Enabled = False
+        lblAPlay.Text = PlayerA(logicalA - 1).CardRank
+        imgA.Visible = True
+        imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
+        If PlayedA = False Then
+            PlayedA = True
             btnPlayerA.Enabled = False
+            If PlayedA And PlayedB Then
+                lblBPlay.Text = PlayerB(logicalB - 1).CardRank
+                imgB.Visible = True
+                btnPlayerB.Enabled = True
+                btnPlayerA.Enabled = True
+                imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
+                Fight()
+            End If
         End If
     End Sub
     Protected Sub btnPlayerA_Click(sender As Object, e As EventArgs) Handles btnPlayerA.Click
@@ -294,35 +277,45 @@
     End Sub
     Protected Sub PlayerBStart()
         reset()
-        If logicalB - 1 >= 0 Then
-            lblBPlay.Text = PlayerB(logicalB - 1).CardRank
-            imgB.Visible = True
-            imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
-            If PlayedB = False Then
-                PlayedB = True
-                btnPlayerB.Enabled = False
-                If PlayedA And PlayedB Then
-                    lblAPlay.Text = PlayerA(logicalA - 1).CardRank
-                    imgA.Visible = True
-                    btnPlayerB.Enabled = True
-                    btnPlayerA.Enabled = True
-                    imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
-                    Fight()
-                End If
-                lblBNum.Text = logicalB
-            End If
-        Else
-            lblResults.Text = "Game Over"
-            lblAPlay.Text = "Won"
-            lblBPlay.Text = "Lost"
+        lblBPlay.Text = PlayerB(logicalB - 1).CardRank
+        imgB.Visible = True
+        imgB.ImageUrl = urlLinksB(PlayerB(logicalB - 1).CardVal)
+        If PlayedB = False Then
+            PlayedB = True
             btnPlayerB.Enabled = False
-            btnPlayerA.Enabled = False
+            If PlayedA And PlayedB Then
+                lblAPlay.Text = PlayerA(logicalA - 1).CardRank
+                imgA.Visible = True
+                btnPlayerB.Enabled = True
+                btnPlayerA.Enabled = True
+                imgA.ImageUrl = urlLinksA(PlayerA(logicalA - 1).CardVal)
+                Fight()
+            End If
+            lblBNum.Text = logicalB
         End If
     End Sub
     Protected Sub btnPlayerB_Click(sender As Object, e As EventArgs) Handles btnPlayerB.Click
         PlayerBStart()
     End Sub
-
+    Protected Function GameOver() As Boolean
+        If logicalB - 1 = 0 Then
+            lblResults.Text = "Game Over"
+            lblAPlay.Text += "Won"
+            lblBPlay.Text += "Lost"
+            btnPlayerB.Enabled = False
+            btnPlayerA.Enabled = False
+            Return False
+        End If
+        If logicalA - 1 = 0 Then
+            lblResults.Text = "Game Over"
+            lblAPlay.Text += "Lost"
+            lblBPlay.Text += "Won"
+            btnPlayerB.Enabled = False
+            btnPlayerA.Enabled = False
+            Return False
+        End If
+        Return True
+    End Function
     Protected Sub WebForm1_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Page.IsPostBack = False Then
             logicalA = 26
